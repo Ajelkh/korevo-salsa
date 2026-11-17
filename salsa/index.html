@@ -47,24 +47,25 @@ a:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
 .nota{color:var(--suave);font-size:.92rem;margin-top:12px}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:28px 0 0}
+.hero{position:relative;overflow:hidden;padding:20px 0 0}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(circle,rgba(230,137,56,.38),rgba(217,56,30,.12) 45%,transparent 70%);pointer-events:none}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;position:relative}
 .marca{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:.02em;color:var(--texto)}
 .marca span{color:var(--mango)}
 .promo{background:var(--chile);color:#fff;font-weight:700;font-size:.85rem;padding:7px 14px;border-radius:999px}
-.hero-grid{display:grid;gap:36px;align-items:center;position:relative}
-@media(min-width:860px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:56px}}
-.hero h1{font-size:clamp(3.4rem,11vw,6.6rem);color:var(--sol);text-transform:uppercase;margin-bottom:24px}
-.lead{font-size:1.18rem;max-width:34ch;margin-bottom:30px;color:var(--texto)}
-.portada{position:relative;max-width:min(420px,88%);margin:0 auto;transform:rotate(2.5deg)}
+.hero-grid{display:grid;gap:28px;align-items:center;position:relative}
+@media(max-width:859px){.hero-grid{text-align:center}.hero-grid .lead{margin-left:auto;margin-right:auto}.hero-grid .portada{order:-1;max-width:min(240px,62%)}.sello{display:none}}
+@media(min-width:860px){.hero-grid{grid-template-columns:1fr 1fr;gap:48px}}
+.hero h1{font-size:clamp(2.5rem,min(9.5vw,8vh),4.6rem);color:var(--sol);text-transform:uppercase;margin-bottom:16px}
+.lead{font-size:1.05rem;max-width:40ch;margin-bottom:22px}
+.portada{position:relative;max-width:min(440px,100%,58vh);margin:0 auto;transform:rotate(2.5deg)}
 .portada img{border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,.55)}
 .sello{position:absolute;left:-18px;bottom:-18px;background:var(--sol);color:var(--noche);border-radius:16px;padding:12px 16px;transform:rotate(-6deg);box-shadow:0 12px 24px rgba(0,0,0,.4);line-height:1.15}
 .sello b{display:block;font-family:'Big Shoulders Display',sans-serif;font-size:2rem;font-weight:900}
 .sello small{font-size:.82rem;font-weight:700}
 
 /* ---------- conteo: el elemento firma ---------- */
-.conteo{margin-top:64px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);overflow:hidden}
+.conteo{margin-top:48px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);overflow:hidden}
 .conteo ol{list-style:none;display:grid;grid-template-columns:repeat(8,1fr);text-align:center}
 .conteo li{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(2rem,7vw,4.4rem);padding:14px 0;color:var(--linea);animation:paso 4s steps(1) infinite}
 .conteo li.pausa{color:transparent;-webkit-text-stroke:1px var(--linea)}
