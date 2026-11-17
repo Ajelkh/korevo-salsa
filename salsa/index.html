@@ -34,7 +34,7 @@ fbq('track','ViewContent',{content_name:'De Cero a la Pista',value:12,currency:'
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--noche);color:var(--texto);font-family:'Figtree',system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 .display{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;line-height:.92;letter-spacing:-.01em}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 a:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
@@ -150,6 +150,34 @@ blockquote footer{font-size:.9rem;color:#5a5240}
 .barra .btn{padding:13px 22px;font-size:1rem}
 @media(min-width:860px){.barra{justify-content:center;gap:28px}}
 @media(prefers-reduced-motion:reduce){.barra{transition:none}.btn{transition:none}}
+
+/* ---------- dolor / sueño / por qué / faq ---------- */
+.dolor .h2{color:var(--texto)}
+.dolores{list-style:none;display:grid;gap:14px;max-width:640px;margin-bottom:36px}
+.dolores li{position:relative;padding:18px 20px 18px 56px;background:var(--noche2);border-radius:16px;font-size:1.1rem}
+.dolores li::before{content:"";position:absolute;left:20px;top:22px;width:20px;height:20px;border-radius:50%;border:2px solid var(--chile);background:linear-gradient(45deg,transparent 45%,var(--chile) 45%,var(--chile) 55%,transparent 55%)}
+.giro{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3rem);line-height:1;color:var(--mango);text-transform:uppercase;max-width:20ch}
+.sueno{background:var(--mango);color:var(--noche)}
+.sueno .h2{color:var(--noche);max-width:16ch}
+.sueno p{font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:500;max-width:40ch;margin-bottom:16px}
+.sueno p b{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:1.3em;letter-spacing:.02em}
+.porque{display:grid;gap:20px}
+@media(min-width:760px){.porque{grid-template-columns:1fr 1fr}}
+.porque div{border-top:3px solid var(--sol);padding-top:18px}
+.porque h3{font-size:1.25rem;margin-bottom:6px;color:var(--sol)}
+.porque p{color:var(--suave)}
+.stack{list-style:none;text-align:left;margin:0 0 22px;border-top:1px solid var(--linea)}
+.stack li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--linea);font-size:1rem}
+.stack li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--sol) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%231b1e21' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.compara{color:var(--suave);font-size:.95rem;margin:18px auto 0;max-width:36ch}
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-size:1.15rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-family:'Big Shoulders Display',sans-serif;font-size:2rem;color:var(--mango);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--suave);padding:0 0 22px;max-width:60ch}
+.faq summary:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
 </style>
 </head>
 <body>
@@ -182,6 +210,25 @@ blockquote footer{font-size:.9rem;color:#5a5240}
 </header>
 
 <main>
+<section class="dolor">
+  <div class="wrap">
+    <h2 class="display h2">¿Te ha pasado?</h2>
+    <ul class="dolores">
+      <li>Suena una salsa en la boda y te quedas en la mesa cuidando los bolsos.</li>
+      <li>Te sacan a bailar y dices "no sé", aunque por dentro sí querías.</li>
+      <li>Ves a otros disfrutar en la pista y piensas que el ritmo no es lo tuyo.</li>
+    </ul>
+    <p class="giro">No es falta de talento. Nadie te enseñó por dónde empezar.</p>
+  </div>
+</section>
+
+<section class="sueno">
+  <div class="wrap">
+    <h2 class="display h2">Ahora imagina la próxima fiesta</h2>
+    <p>Suena la canción y te paras sin pensarlo. Cuentas en tu cabeza <b>1, 2, 3… 5, 6, 7</b> y sacas a alguien a bailar.</p>
+    <p>Sin mirarte los pies. Sin pena. Disfrutando la noche en vez de verla desde la silla.</p>
+  </div>
+</section>
 <section>
   <div class="wrap">
     <h2 class="display h2">Todo lo que recibes hoy</h2>
@@ -193,7 +240,7 @@ blockquote footer{font-size:.9rem;color:#5a5240}
     </ol>
     <div class="incluye">
       <div class="dato">
-        <div class="display">24 clases</div>
+        <div class="display">21 clases</div>
         <h3>Cortas, de 15 a 20 minutos</h3>
         <p>Con calentamiento incluido, pasos para hombre y para mujer, y acceso de por vida desde tu celular.</p>
       </div>
@@ -201,6 +248,19 @@ blockquote footer{font-size:.9rem;color:#5a5240}
         <h3>¿No tienes pareja o sientes que no tienes ritmo?</h3>
         <p>Perfecto. Los 3 módulos individuales se practican solo, y empezamos por el conteo, desde cero absoluto. Si puedes caminar, puedes bailar salsa.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="display h2">Por qué esta vez sí vas a aprender</h2>
+    <p class="sub">Si lo intentaste antes con videos sueltos, esto es diferente.</p>
+    <div class="porque">
+      <div><h3>Empiezas de verdad desde cero</h3><p>Lo primero es el conteo. No das un paso hasta entender la música.</p></div>
+      <div><h3>Clases de 15 minutos</h3><p>Avanzas aunque tengas poco tiempo. Una clase al día y ya estás practicando.</p></div>
+      <div><h3>Practicas solo, en tu sala</h3><p>Nadie te ve equivocarte. Llegas a la pista cuando ya te sientes listo.</p></div>
+      <div><h3>Lo repites las veces que quieras</h3><p>Acceso de por vida desde tu celular. Si un paso no te sale, lo vuelves a ver.</p></div>
     </div>
   </div>
 </section>
@@ -231,9 +291,19 @@ blockquote footer{font-size:.9rem;color:#5a5240}
       <div class="precio"><small>US$</small>12</div>
       <div class="unico">Pago único</div>
       <div class="cop">Unos $42.000 pesos colombianos. Tarjeta, Nequi, PSE o Efecty.</div>
+      <ul class="stack">
+        <li>Nivel inicial: conteo y paso básico</li>
+        <li>Intermedio y avanzado: salsa en línea y caleña</li>
+        <li>Módulo en pareja: sacar a bailar, guiar, girar y crossbody</li>
+        <li>21 clases cortas con calentamiento incluido</li>
+        <li>Pasos para hombre y para mujer</li>
+        <li>Acceso de por vida desde tu celular</li>
+        <li>Garantía de 7 días</li>
+      </ul>
       <a class="btn cta" href="https://pay.hotmart.com/V96636901F">Sí, quiero aprender</a>
       <p class="nota">Pago 100% seguro con Hotmart. Acceso inmediato.</p>
     </div>
+    <p class="compara">Una sola clase particular en una academia suele costar más que el curso completo.</p>
   </div>
 </section>
 
@@ -245,6 +315,16 @@ blockquote footer{font-size:.9rem;color:#5a5240}
       <p>Entra, mira las primeras clases y practica en tu sala. Si en 7 días sientes que no es para ti, te devolvemos el 100% de tu dinero, sin preguntas. El riesgo es todo nuestro.</p>
       <a class="btn cta" href="https://pay.hotmart.com/V96636901F">Quiero empezar hoy</a>
     </div>
+  </div>
+</section>
+<section class="garantia" style="border-top:0;padding-top:0">
+  <div class="wrap faq">
+    <h2 class="display h2" style="color:var(--texto)">Preguntas frecuentes</h2>
+    <details><summary>¿Necesito pareja para aprender?</summary><p>No. Los 3 módulos individuales se practican solo. El módulo en pareja lo haces cuando tengas con quién, o lo aplicas directamente en la próxima fiesta.</p></details>
+    <details><summary>Nunca he bailado y siento que no tengo ritmo. ¿Es para mí?</summary><p>Sí. El curso empieza por el conteo, desde cero absoluto. Si puedes caminar, puedes bailar salsa.</p></details>
+    <details><summary>¿Cómo recibo el curso?</summary><p>Apenas pagas, Hotmart te envía un correo con tu acceso. Entras desde el celular o el computador, cuando quieras.</p></details>
+    <details><summary>¿Cómo puedo pagar?</summary><p>Con tarjeta, Nequi, PSE o Efecty. El pago es de unos $42.000 pesos colombianos, una sola vez.</p></details>
+    <details><summary>¿Y si no me gusta?</summary><p>Tienes 7 días de garantía. Si sientes que no es para ti, te devolvemos el 100% de tu dinero, sin preguntas.</p></details>
   </div>
 </section>
 </main>
