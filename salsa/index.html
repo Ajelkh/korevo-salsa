@@ -339,6 +339,23 @@ blockquote footer{font-size:.9rem;color:#5a5240}
 </div>
 
 <script>
+// Pasa las UTM del anuncio al checkout de Hotmart (src = anuncio, sck = campaña) para saber qué anuncio vende
+(function(){
+  try{
+    var q=new URLSearchParams(location.search), keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var saved={}; try{ saved=JSON.parse(sessionStorage.getItem('kv_utm')||'{}'); }catch(e){}
+    keys.forEach(function(k){ if(q.get(k)) saved[k]=q.get(k); });
+    try{ sessionStorage.setItem('kv_utm',JSON.stringify(saved)); }catch(e){}
+    if(!Object.keys(saved).length) return;
+    document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(a){
+      var u=new URL(a.href);
+      keys.forEach(function(k){ if(saved[k]) u.searchParams.set(k,saved[k]); });
+      if(saved.utm_content) u.searchParams.set('src',saved.utm_content);
+      if(saved.utm_campaign) u.searchParams.set('sck',[saved.utm_source,saved.utm_campaign].filter(Boolean).join('_'));
+      a.href=u.toString();
+    });
+  }catch(e){}
+})();
 document.querySelectorAll('a.cta').forEach(function(a){
   a.addEventListener('click',function(){ try{ fbq('trackCustom','ClickComprar'); }catch(e){} });
 });
